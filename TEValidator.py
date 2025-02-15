@@ -9,7 +9,6 @@ from dotenv import find_dotenv, load_dotenv
 # dotenv_path = find_dotenv()
 # load_dotenv(dotenv_path)
 API_KEY = st.secrets.OPENAI_API_KEY
-st.title(API_KEY)
 
 # Initialize OpenAI client
 client = OpenAI(api_key=API_KEY)
