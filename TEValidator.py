@@ -2,12 +2,11 @@ import streamlit as st
 from PyPDF2 import PdfReader
 import pptx
 from openai import OpenAI
-import os
-from dotenv import find_dotenv, load_dotenv
+# # import os
+# from dotenv import find_dotenv, load_dotenv
 
 # Import the OpenAI API key
-# dotenv_path = find_dotenv()
-# load_dotenv(dotenv_path)
+
 API_KEY = st.secrets.OPENAI_API_KEY
 
 # Initialize OpenAI client
@@ -73,7 +72,7 @@ def extract_text_from_pptx(file):
 # Function to summarize text using OpenAI
 def summarize_text(text):
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "You are a helpful assistant that summarizes text."},
             {"role": "user", "content": f"Summarize the following text:\n{text}\n\nSummary:"}
